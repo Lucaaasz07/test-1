@@ -9,10 +9,10 @@ if rango_inferior > rango_superior:
 else:
 
     numero_random=random.randint(rango_inferior,rango_superior)
-    print(numero_random)
+    
 
     numerofinalizado= round(numero_random/4)*4
-    print(numerofinalizado)
+   
 
     numero_escogido=0
 
