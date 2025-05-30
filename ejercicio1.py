@@ -1,37 +1,52 @@
-#Ejercicio 1
-quintil=int(input("Seleccione su quintil(1,5)"))
-laboral=(input("Seleccione su condicion laboral(Empleado o Desempleado)"))
-edad=int(input("Seleccione su edad"))
+#EL usuario debe ingresar la temperatura en un rango entre -50° y 50°, dado eque el usuaario puede ingresar cualquier dato (incluso cadna de texto), 
 
-subsidio_base=0
-bonos=0
+#se puede usar manejo de excepciones para evitar que el programa se detenga,
 
-if quintil == 1:
-    subsidio_base = 15000 
-    bono=+ 2000
-    if laboral == "Empleado":
-        subsidio_base = 0
-    
-elif quintil == 2:
-    subsidio_base = 10000
-    bono=+ 2000
-    if laboral == "Desempleado":
-        subsidio_base= 0
-    
-    bono=+ 2000
-elif quintil == 3:
-    subsidio_base = 8000 
-    if laboral == "Empleado":
-        subsidio_base = 0
-elif quintil == 4:
-    subsidio_base = 6000
-    if laboral == "Desempleado":
-        subsidio_base = 0
-elif quintil == 5:
-    subsidio_base = 1500
+#1. Si el dato ingresado no es numero entero el programa debe mostrar el sig mensaje:
 
-if edad > 65:
- bonoedad= 3000
+ # "Error: debe ingresar un numero entero valido"
 
-total = subsidio_base + bono + bonoedad
-print("Su total de subsidio es de: $", (total))
+#2. Si el usuario ingresa un numero entero fuera del rango, informarmarle al usuario.
+
+ # "Temperatura fuera del rango permitido (temperatura entre -50° y 50°)
+
+#3. Si el usuario ingresa la temperatura correctamente:
+
+ # "Temperatura ingresada correctamente"
+
+#4. Debe existir una opcion para salir del programa
+
+#5. Cuando salga del programa mostrar el mensaje:
+
+#  "Saliendo del programa, hasta luego"  
+
+
+
+
+
+
+rango_min = -50
+rango_max = 50
+
+while True:
+    try:
+        escogido = int(input("Escoja una temperatura entre -50° y 50°: "))
+    except ValueError:
+        print("Error: debe ingresar un número entero válido.")
+        continue  
+
+    if escogido < rango_min or escogido > rango_max:
+        print("Temperatura fuera del rango permitido (temperatura entre -50° y 50°).")
+        continue
+
+    print("Temperatura ingresada correctamente.")
+
+    res = input("¿Desea salir del programa? (sí o no): ")
+    if res == "si" or res == "sí":
+        print("Saliendo del programa, hasta luego.")
+        break
+
+
+
+
+
